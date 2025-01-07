@@ -1,0 +1,16 @@
+data/output/*
+!data/output/.gitkeep
+
+jupyter_sessions/*
+!jupyter_sessions/.gitkeep
+
+__pycache__/
+*.pyc
+*.pyo
+
+.ipynb_checkpoints/
+
+*.log
+*.tmp
+.DS_Store
+*.swp
