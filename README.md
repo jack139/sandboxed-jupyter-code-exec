@@ -24,7 +24,7 @@ A FastAPI-powered application that enables Python code execution in a sandboxed 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/sandboxed-jupyter-code-exec.git
+git clone https://github.com/anukriti-ranjan/sandboxed-jupyter-code-exec.git
 cd sandboxed-jupyter-code-exec
 ```
 
