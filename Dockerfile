@@ -2,7 +2,8 @@
 FROM python:3.10-slim
 
 # Install system dependencies
-RUN sed -i 's#deb.debian.org/debian$#mirrors.tuna.tsinghua.edu.cn/debian#' /etc/apt/sources.list.d/debian.sources
+RUN sed -i 's#deb.debian.org/debian$#mirrors.aliyun.com/debian#' /etc/apt/sources.list.d/debian.sources
+#RUN sed -i 's#deb.debian.org/debian$#mirrors.tuna.tsinghua.edu.cn/debian#' /etc/apt/sources.list.d/debian.sources
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-pip \
