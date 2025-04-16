@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-RUN pip install python-multipart fastapi uvicorn jupyter-client nbformat ipykernel
+RUN pip install python-multipart fastapi uvicorn jupyter-client nbformat ipykernel -i https://pypi.tuna.tsinghua.edu.cn/simple
 RUN python3 -m ipykernel install --user
-RUN pip install pandas numpy matplotlib scipy seaborn scikit-learn pyarrow tabulate openpyxl xlrd
+RUN pip install pandas numpy matplotlib scipy seaborn scikit-learn pyarrow tabulate openpyxl xlrd -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Create necessary directories
 RUN mkdir -p /mnt/data /mnt/jupyter_sessions /workspace
