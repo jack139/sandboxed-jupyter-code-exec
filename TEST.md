@@ -1,5 +1,11 @@
 # local test
 
+## 新建 docker
+
+```bash
+docker build -t sandboxed-jupyter-code-exec .
+```
+
 
 ## 后台运行
 
