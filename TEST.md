@@ -50,6 +50,6 @@ curl -X POST http://localhost:5002/execute \
     -H "Content-Type: application/json" \
     -d '{
         "user_id": "user_test",
-        "code": "print(\"Hello, World!\")\nplt.plot([1, 2, 3, 4])\nplt.ylabel(\"some numbers\")\nplt.show()"
+        "code": "import matplotlib.pyplot as plt\nprint(\"Hello, World!\")\nplt.plot([1, 2, 3, 4])\nplt.ylabel(\"some numbers\")\nplt.show()"
     }'
 ```
