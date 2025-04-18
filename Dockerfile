@@ -7,7 +7,11 @@ RUN sed -i 's#deb.debian.org/debian$#mirrors.aliyun.com/debian#' /etc/apt/source
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     python3-pip \
+    fontconfig \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+# fontconfig
+RUN fc-cache -fv
+COPY simhei.ttf /usr/share/fonts/
 
 # Install Python dependencies
 RUN pip install python-multipart fastapi uvicorn jupyter-client nbformat ipykernel -i https://pypi.tuna.tsinghua.edu.cn/simple

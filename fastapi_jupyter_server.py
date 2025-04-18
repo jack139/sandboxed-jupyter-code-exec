@@ -225,9 +225,12 @@ async def start_session(user_id: str = Form(...)):
         
         # Initialize common imports that might be needed
         setup_code = """
-        import pandas as pd
-        import numpy as np
-        import matplotlib.pyplot as plt
+        #import pandas as pd
+        #import numpy as np
+        #import matplotlib.pyplot as plt
+        from pylab import mpl
+        mpl.rcParams["font.sans-serif"] = ["SimHei"]
+        mpl.rcParams["axes.unicode_minus"] = False
         """
         await controller.execute_code(setup_code)
         

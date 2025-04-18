@@ -1,4 +1,4 @@
-data/output/*
+data/
 !data/output/.gitkeep
 
 jupyter_sessions/*

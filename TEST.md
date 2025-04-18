@@ -11,6 +11,7 @@ docker build -t sandboxed-jupyter-code-exec .
 
 ```bash
 docker run -d -p 5002:5000 \
+    --cpus=1 -m 512m \
     -v $(pwd)/data:/mnt/data \
     -v $(pwd)/jupyter_sessions:/mnt/jupyter_sessions \
     sandboxed-jupyter-code-exec
