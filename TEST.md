@@ -53,3 +53,14 @@ curl -X POST http://localhost:5002/execute \
         "code": "import matplotlib.pyplot as plt\nprint(\"Hello, World!\")\nplt.plot([1, 2, 3, 4])\nplt.ylabel(\"some numbers\")\nplt.show()"
     }'
 ```
+
+
+
+## 复制 docker image
+
+```bash
+# 源机器
+docker save sandboxed-jupyter-code-exec:latest -o ~/tmp/sandbox.jar
+# 目标机器
+docker load < sandbox.jar
+```
