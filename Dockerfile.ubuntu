@@ -1,0 +1,24 @@
+FROM ubuntu:16.04
+
+# Install system dependencies
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN sed -i s@/security.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	apt-transport-https ca-certificates curl software-properties-common
+
+# install docker
+RUN curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	docker-ce=17.09.0~ce-0~ubuntu
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Create necessary directories
+RUN mkdir -p /mnt/data /workspace
+
+# Set environment variables for mounted volumes
+ENV DATA_DIR=/mnt/data
+
+# Set the working directory
+WORKDIR /workspace

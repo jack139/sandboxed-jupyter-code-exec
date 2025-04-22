@@ -64,3 +64,18 @@ docker save sandboxed-jupyter-code-exec:latest -o ~/tmp/sandbox.jar
 # 目标机器
 docker load < sandbox.jar
 ```
+
+
+
+## Ubuntu 16.04 模拟环境
+
+```bash
+# 创建 docker
+docker build -t ubuntu1604-docker -f Dockerfile.ubuntu .
+
+# 交互执行
+docker run -it \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $(pwd)/data:/mnt/data \
+    ubuntu1604-docker /bin/bash
+```
